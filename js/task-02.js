@@ -1,3 +1,5 @@
+// Завдання 2
+
 // Напиши скрипт, який для кожного елемента масиву ingredients:
 
 // Створить окремий елемент <li>. Обов'язково використовуй метод document.createElement().
@@ -7,11 +9,18 @@
 
 const ingredients = ["Potatoes", "Mushrooms", "Garlic", "Tomatos", "Herbs", "Condiments"];
 const ingredientsUl = document.querySelector("#ingredients");
-// const ingredientsSet = ingredients.map((el) => `<li class="item">${el}</li>`).join("");
 
-const ingredientsSet = ingredients.reduce(
-  (prew, next) => prew + `<li class="item">${next}</li>`,
-  ""
-);
-ingredientsUl.innerHTML = ingredientsSet;
-// ingredientsUl.insertAdjacentHTML("afterbegin", ingredientsSet);
+// const ingredientsSet = ingredients.reduce(
+//   (prew, next) => prew + `<li class="item">${next}</li>`,
+//   ""
+// );
+// ingredientsUl.innerHTML = ingredientsSet;
+
+const ingredientList = ingredients.map((ingredient) => {
+  const ingredientEl = document.createElement("li");
+  ingredientEl.classList.add("item");
+  ingredientEl.textContent = ingredient;
+  return ingredientEl;
+});
+
+ingredientsUl.append(...ingredientList);

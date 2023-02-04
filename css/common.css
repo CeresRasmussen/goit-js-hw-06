@@ -11,6 +11,7 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  padding: 0 35px;
 }
 
 input {
@@ -24,12 +25,16 @@ button {
 }
 
 .gallery {
-  display: flex;
-  flex-direction: row;
-  gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 350px;
+  gap: 20px;
+  margin: auto;
+  padding: 0;
 }
 
-.gallery__item {
+.gallery li {
+  position: relative;
   list-style: none;
   display: flex;
   align-items: center;
@@ -38,20 +43,18 @@ button {
   transition: transform 250ms linear, filter 250ms linear;
   border-radius: 10px;
   overflow: hidden;
-  height: 350px;
 }
 
-.gallery__item img {
+.gallery img {
   height: 100%;
   object-fit: contain;
 }
 
-.gallery__item:hover {
+.gallery li:hover {
   transform: scale(1.2);
   z-index: 1;
 }
 
 .gallery:hover > :not(:hover) {
   filter: blur(5px) grayscale(100%);
-  transform: scale(0.9);
 }
