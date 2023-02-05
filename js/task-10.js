@@ -24,12 +24,12 @@ function getRandomHexColor() {
 
 function createBoxes(amount) {
   for (let index = 0; index < amount; index++) {
-    size += 10;
     const box = document.createElement("div");
     box.style.backgroundColor = `${getRandomHexColor()}`;
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     boxes.push(box);
+    size += 10;
   }
   boxContainer.append(...boxes);
 }
