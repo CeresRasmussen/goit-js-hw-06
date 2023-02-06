@@ -44,8 +44,8 @@ function quantityBox() {
 function cleanAll() {
   boxContainer.innerHTML = "";
   quantityBoxInput.value = "";
-  size = 30;
   boxes.length = 0;
+  size = 30;
 }
 
 createBoxBtn.addEventListener("click", quantityBox);
