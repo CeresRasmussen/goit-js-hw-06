@@ -4,13 +4,16 @@
 // і виводить значення кольору в span.color.
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 const body = document.body;
 const bodyColorName = document.querySelector(".color");
 const changeBtnColor = document.querySelector(".change-color");
 
 changeBtnColor.addEventListener("click", () => {
-  body.style.backgroundColor = getRandomHexColor();
-  bodyColorName.textContent = getRandomHexColor();
+  const randomBackgroundColor = getRandomHexColor();
+  body.style.backgroundColor = randomBackgroundColor;
+  bodyColorName.textContent = randomBackgroundColor;
 });
